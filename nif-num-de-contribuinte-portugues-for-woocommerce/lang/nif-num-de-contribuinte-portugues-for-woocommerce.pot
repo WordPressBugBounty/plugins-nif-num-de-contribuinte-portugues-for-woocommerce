@@ -1,0 +1,117 @@
+# Copyright (C) 2024 PT Woo Plugins (by Webdados)
+# This file is distributed under the same license as the NIF (Num. de Contribuinte Português) for WooCommerce plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: NIF (Num. de Contribuinte Português) for WooCommerce 6.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nif-num-de-contribuinte-portugues-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-01-30T15:21:09+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: nif-num-de-contribuinte-portugues-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+msgid "NIF (Num. de Contribuinte Português) for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://www.webdados.pt/wordpress/plugins/nif-de-contribuinte-portugues-woocommerce-wordpress/"
+msgstr ""
+
+#. Description of the plugin
+msgid "This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new field to WooCommerce checkout and order details, if the billing address is from Portugal."
+msgstr ""
+
+#. Author of the plugin
+msgid "PT Woo Plugins (by Webdados)"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://ptwooplugins.com"
+msgstr ""
+
+#: ptwoo-nif-extend-store-endpoint.php:55
+#: woocommerce_nif.php:373
+msgid "NIF / NIPC"
+msgstr ""
+
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:28
+msgid "Are you already issuing automatic invoices on your WooCommerce store?"
+msgstr ""
+
+#. translators: %1$s link opening tag, %2$s link cosing tag
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:33
+msgid "If not, get to know our new plugin: %1$sInvoicing with InvoiceXpress for WooCommerce%2$s"
+msgstr ""
+
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:36
+msgid "https://invoicewoo.com/"
+msgstr ""
+
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:42
+msgid "Use the coupon <strong>webdados</strong> for 10% discount!"
+msgstr ""
+
+#: woocommerce_nif.php:83
+#: woocommerce_nif.php:173
+msgid "Portuguese VAT identification number"
+msgstr ""
+
+#. translators: %s NIF field name
+#: woocommerce_nif.php:274
+#: woocommerce_nif.php:314
+msgid "You have entered an invalid %s for Portugal."
+msgstr ""
+
+#: build/ptwoo-nif-block-frontend.js:1
+#: build/ptwoo-nif-block.js:1
+msgid "Fiscal information"
+msgstr ""
+
+#. translators: %s field label
+#: build/ptwoo-nif-block-frontend.js:1
+#: build/ptwoo-nif-block-frontend.js:2
+msgid "Please enter a valid %s"
+msgstr ""
+
+#. translators: %s field label
+#: build/ptwoo-nif-block-frontend.js:3
+msgid "(optional)"
+msgstr ""
+
+#: build/ptwoo-nif-block.js:1
+msgid "Optional text for this form step."
+msgstr ""
+
+#: build/ptwoo-nif-block.js:1
+msgid "Form Step Options"
+msgstr ""
+
+#: build/ptwoo-nif-block.js:1
+msgid "Show step number"
+msgstr ""
+
+#: build/ptwoo-nif-block.js:1
+msgid "NIF Options"
+msgstr ""
+
+#: build/ptwoo-nif-block.js:1
+msgid "Label"
+msgstr ""
+
+#: build/ptwoo-nif-block.js:1
+msgid "Required"
+msgstr ""
+
+#: build/ptwoo-nif-block.js:1
+msgid "Validate"
+msgstr ""
+
+#: build/block.json
+msgctxt "block title"
+msgid "NIF Português"
+msgstr ""

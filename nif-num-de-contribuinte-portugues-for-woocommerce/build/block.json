@@ -1,0 +1,27 @@
+{
+  "apiVersion": 2,
+  "name": "woocommerce/ptwoo-nif",
+  "version": "0.2.0",
+  "title": "NIF Português",
+  "category": "woocommerce",
+  "description": "",
+  "supports": {
+    "html": false,
+    "align": false,
+    "multiple": false,
+    "reusable": false
+  },
+  "parent": [
+    "woocommerce/checkout-fields-block"
+  ],
+  "attributes": {
+    "lock": {
+      "type": "object",
+      "default": {
+        "remove": true,
+        "move": false
+      }
+    }
+  },
+  "textdomain": "nif-num-de-contribuinte-portugues-for-woocommerce"
+}
