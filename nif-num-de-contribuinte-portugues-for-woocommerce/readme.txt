@@ -2,9 +2,9 @@
 Contributors: webdados, ptwooplugins
 Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.6
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 6.4
+Stable tag: 6.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,10 @@ If you reach us by email or any other direct contact means, we’ll assume you n
 You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
+
+= 6.5 - 2024-10-08 =
+* [FIX] Load text domain at the right time to avoid PHP notices on WordPress 6.7 and above
+* [DEV] Tested with WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
 
 = 6.4 - 2024-07-25 =
 * [NEW] `woocommerce_nif_invalid_message` filter to change the invalid Portuguese NIF/NIPC message on checkout
