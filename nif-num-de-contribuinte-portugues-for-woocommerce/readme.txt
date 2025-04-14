@@ -1,10 +1,10 @@
 === NIF (Num. de Contribuinte Português) for WooCommerce ===
-Contributors: webdados, ptwooplugins
+Contributors: nakedcatplugins, webdados
 Tags: ecommerce, nif, nipc, vat, tax
-Requires at least: 5.6
-Tested up to: 6.7
-Requires PHP: 7.0
-Stable tag: 6.5
+Requires at least: 5.8
+Tested up to: 6.8
+Requires PHP: 7.2
+Stable tag: 6.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,16 +28,16 @@ If not, get to know our new plugin: [Invoicing with InvoiceXpress for WooCommerc
 
 == Already know our other WooCommerce (premium) plugins? ==
 
-* [Portuguese Postcodes for WooCommerce](https://ptwooplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
+* [Portuguese Postcodes for WooCommerce](https://nakedcatplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
 * [Invoicing with InvoiceXpress for WooCommerce](https://invoicewoo.com/) - Automatically issue invoices directly from the WooCommerce order
-* [DPD Portugal for WooCommerce](https://ptwooplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
-* [Feed KuantoKusta for WooCommerce](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/) - Publish your products on Kuanto Kusta with this easy to use feed generator
-* [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://ptwooplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
-* [Simple Custom Fields for WooCommerce Blocks Checkout](https://ptwooplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields to the new WooCommerce Block-based Checkout
-* [Simple WooCommerce Order Approval](https://ptwooplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
-* [Shop as Client for WooCommerce](https://ptwooplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
-* [Taxonomy/Term and Role based Discounts for WooCommerce](https://ptwooplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
-* [DPD / SEUR / Geopost Pickup and Lockers network for WooCommerce](https://ptwooplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD and SEUR Pickup network of Parcelshops and Lockers in 21 European countries
+* [DPD Portugal for WooCommerce](https://nakedcatplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
+* [Feed KuantoKusta for WooCommerce](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/) - Publish your products on Kuanto Kusta with this easy to use feed generator
+* [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://nakedcatplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
+* [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
+* [Simple WooCommerce Order Approval](https://nakedcatplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
+* [Shop as Client for WooCommerce](https://nakedcatplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
+* [Taxonomy/Term and Role based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
+* [DPD / SEUR / Geopost Pickup and Lockers network for WooCommerce](https://nakedcatplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD and SEUR Pickup network of Parcelshops and Lockers in 21 European countries
 
 == Installation ==
 
@@ -100,6 +100,11 @@ You can report any security bugs found in the source code of this plugin through
 
 == Changelog ==
 
+= 6.6 - 2025-04-14 =
+* [NEW] We are now called Naked Cat Plugins 😻
+* [DEV] Requires WordPress 5.8, WooCommerce 7.1, and PHP 7.2
+* [DEV] Tested with WordPress 6.8-RC3-60146 and WooCommerce 9.8.1
+
 = 6.5 - 2024-10-08 =
 * [FIX] Load text domain at the right time to avoid PHP notices on WordPress 6.7 and above
 * [DEV] Tested with WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
@@ -120,7 +125,7 @@ You can report any security bugs found in the source code of this plugin through
 
 = 6.1 - 2024-02-01 =
 * [FIX] Correctly load block i18n on the block javascript files
-* [DEV] Declare cart anc checkout blocks compatibility (just in case)
+* [DEV] Declare cart and checkout blocks compatibility (just in case)
 * [DEV] Tested with WordPress 6.5-alpha-57505 and WooCommerce 8.6-0-beta.1
 
 = 6.0 - 2024-01-30 =

@@ -1,37 +1,42 @@
-# Copyright (C) 2024 PT Woo Plugins (by Webdados)
+# Copyright (C) 2025 Naked Cat Plugins (by Webdados)
 # This file is distributed under the same license as the NIF (Num. de Contribuinte Português) for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: NIF (Num. de Contribuinte Português) for WooCommerce 6.0\n"
+"Project-Id-Version: NIF (Num. de Contribuinte Português) for WooCommerce 6.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nif-num-de-contribuinte-portugues-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-30T15:21:09+00:00\n"
+"POT-Creation-Date: 2025-04-14T07:36:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: nif-num-de-contribuinte-portugues-for-woocommerce\n"
 
 #. Plugin Name of the plugin
+#: woocommerce_nif.php
 msgid "NIF (Num. de Contribuinte Português) for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: woocommerce_nif.php
 msgid "https://www.webdados.pt/wordpress/plugins/nif-de-contribuinte-portugues-woocommerce-wordpress/"
 msgstr ""
 
 #. Description of the plugin
+#: woocommerce_nif.php
 msgid "This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new field to WooCommerce checkout and order details, if the billing address is from Portugal."
 msgstr ""
 
 #. Author of the plugin
-msgid "PT Woo Plugins (by Webdados)"
+#: woocommerce_nif.php
+msgid "Naked Cat Plugins (by Webdados)"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://ptwooplugins.com"
+#: woocommerce_nif.php
+msgid "https://nakedcatplugins.com"
 msgstr ""
 
 #: ptwoo-nif-extend-store-endpoint.php:55
@@ -56,14 +61,14 @@ msgstr ""
 msgid "Use the coupon <strong>webdados</strong> for 10% discount!"
 msgstr ""
 
-#: woocommerce_nif.php:83
-#: woocommerce_nif.php:173
+#: woocommerce_nif.php:84
+#: woocommerce_nif.php:174
 msgid "Portuguese VAT identification number"
 msgstr ""
 
 #. translators: %s NIF field name
-#: woocommerce_nif.php:274
 #: woocommerce_nif.php:314
+#: woocommerce_nif.php:421
 msgid "You have entered an invalid %s for Portugal."
 msgstr ""
 
@@ -72,14 +77,7 @@ msgstr ""
 msgid "Fiscal information"
 msgstr ""
 
-#. translators: %s field label
 #: build/ptwoo-nif-block-frontend.js:1
-#: build/ptwoo-nif-block-frontend.js:2
-msgid "Please enter a valid %s"
-msgstr ""
-
-#. translators: %s field label
-#: build/ptwoo-nif-block-frontend.js:3
 msgid "(optional)"
 msgstr ""
 
