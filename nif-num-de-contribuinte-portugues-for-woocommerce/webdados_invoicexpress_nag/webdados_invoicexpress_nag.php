@@ -50,9 +50,9 @@ add_action( 'admin_notices', 'webdados_invoicexpress_nag' );
  * Dismiss InvoiceXpress for WooCommerce nag
  */
 function dismiss_webdados_invoicexpress_nag() {
-	$days       = 90;
-	$expiration = $days * DAY_IN_SECONDS;
-	set_transient( 'webdados_invoicexpress_nag', 1, $expiration );
+	$days                 = 120;
+	$expiration_timestamp = time() + ( $days * DAY_IN_SECONDS );
+	update_user_meta( get_current_user_id(), 'webdados_invoicexpress_nag_dismissed_until', $expiration_timestamp );
 	wp_die();
 }
 add_action( 'wp_ajax_dismiss_webdados_invoicexpress_nag', 'dismiss_webdados_invoicexpress_nag' );

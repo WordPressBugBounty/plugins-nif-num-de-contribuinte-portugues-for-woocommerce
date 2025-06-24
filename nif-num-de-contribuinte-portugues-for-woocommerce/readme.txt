@@ -2,9 +2,9 @@
 Contributors: nakedcatplugins, webdados
 Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 6.6
+Stable tag: 6.7
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,10 @@ If you reach us by email or any other direct contact means, we’ll assume you n
 You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
+
+= 6.7 - 2025-06-24 =
+* [TWEAK] Improve the mechanism to keep the "Invoicing with InvoiceXpress for WooCommerce" admin notice from showing to the same user in the next 120 days after dismissal
+* [DEV] Tested up to WordPress 6.9-alpha-60342 and WooCommerce 10.0.0-rc.1
 
 = 6.6 - 2025-04-14 =
 * [NEW] We are now called Naked Cat Plugins 😻
