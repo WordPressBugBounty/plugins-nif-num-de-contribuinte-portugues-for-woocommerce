@@ -2,9 +2,9 @@
 Contributors: nakedcatplugins, webdados
 Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 6.7
+Stable tag: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -92,13 +92,21 @@ This is a free plugin. It’s our way of giving back to the wonderful WordPress 
 
 There’s a support tab on the top of this page, where you can ask the community for help. We’ll try to keep an eye on the forums but we cannot promise to answer support tickets.
 
-If you reach us by email or any other direct contact means, we’ll assume you need, premium, and of course, paid-for support.
+If you reach us by email or any other direct contact method, we’ll assume you need premium, paid-for support.
 
 = Where do I report security vulnerabilities found in this plugin? =  
  
 You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
+
+= 7.0 - 2026-04-10 =
+* [NEW] Free plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
+* [TWEAK] Added [our ifthenpay plugin](https://wordpress.org/plugins/multibanco-ifthen-software-gateway-for-woocommerce/) as a suggested payment gateway in WooCommerce, if still not present (can be removed by setting the `NAKEDCAT_RECOMMEND_IFTHENPAY` constant to true)
+* [DEV] Removed `load_plugin_textdomain` call as WordPress handles it
+* [DEV] Improved PHPCS rules
+* [DEV] Implement release automations via GitHub Actions
+* [DEV] Tested up to WordPress 7.0-RC2-62197 and WooCommerce 10.7.0-beta.2
 
 = 6.7 - 2025-06-24 =
 * [TWEAK] Improve the mechanism to keep the "Invoicing with InvoiceXpress for WooCommerce" admin notice from showing to the same user in the next 120 days after dismissal
@@ -107,117 +115,117 @@ You can report any security bugs found in the source code of this plugin through
 = 6.6 - 2025-04-14 =
 * [NEW] We are now called Naked Cat Plugins 😻
 * [DEV] Requires WordPress 5.8, WooCommerce 7.1, and PHP 7.2
-* [DEV] Tested with WordPress 6.8-RC3-60146 and WooCommerce 9.8.1
+* [DEV] Tested up to WordPress 6.8-RC3-60146 and WooCommerce 9.8.1
 
 = 6.5 - 2024-10-08 =
 * [FIX] Load text domain at the right time to avoid PHP notices on WordPress 6.7 and above
-* [DEV] Tested with WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
+* [DEV] Tested up to WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
 
 = 6.4 - 2024-07-25 =
 * [NEW] `woocommerce_nif_invalid_message` filter to change the invalid Portuguese NIF/NIPC message on checkout
 * [DEV] Make blocks checkout use the same invalid message as the classic checkout, thus benefiting from the same filter
 * [DEV] Block lock position defined in block.json
-* [DEV] Tested with WordPress 6.7-alpha-58796 and WooCommerce 9.1.3
+* [DEV] Tested up to WordPress 6.7-alpha-58796 and WooCommerce 9.1.3
 
 = 6.3 - 2024-03-27 =
 * [DEV] Set `Requires Plugins` tag to `woocommerce`
-* [DEV] Tested with WordPress 6.5-RC3-57875 and WooCommerce 8.8.0-beta.1
+* [DEV] Tested up to WordPress 6.5-RC3-57875 and WooCommerce 8.8.0-beta.1
 
 = 6.2 - 2024-02-18 =
 * [DEV] Simplify block build process and implement SVG accessibility attributes
-* [DEV] Tested with WordPress 6.5-beta1-57650 and WooCommerce 8.6.0
+* [DEV] Tested up to WordPress 6.5-beta1-57650 and WooCommerce 8.6.0
 
 = 6.1 - 2024-02-01 =
 * [FIX] Correctly load block i18n on the block javascript files
 * [DEV] Declare cart and checkout blocks compatibility (just in case)
-* [DEV] Tested with WordPress 6.5-alpha-57505 and WooCommerce 8.6-0-beta.1
+* [DEV] Tested up to WordPress 6.5-alpha-57505 and WooCommerce 8.6-0-beta.1
 
 = 6.0 - 2024-01-30 =
 * [NEW] Block-based Checkout compatibility (in beta)
 * [TWEAK] Improve filters_examples.php
 * [DEV] Requires WordPress 5.6 and WooCommerce 6.0
-* [DEV] Tested with WordPress 6.5-alpha-57378 and WooCommerce 8.5.2
+* [DEV] Tested up to WordPress 6.5-alpha-57378 and WooCommerce 8.5.2
 
 = 5.6 - 2024-01-10 =
 * Fix checkout validation feedback on WooCommerce 8.5 and above
-* Tested with WordPress 6.5-alpha-57258 and WooCommerce 8.5
+* Tested up to WordPress 6.5-alpha-57258 and WooCommerce 8.5
 
 = 5.5 - 2023-11-17 =
-* Tested with WordPress 6.5-alpha-57114 and WooCommerce 8.3.0
+* Tested up to WordPress 6.5-alpha-57114 and WooCommerce 8.3.0
 
 = 5.4 - 2023-09-07 =
 * Do not accept "000000000" as NIF number, if validation is active
 * Fixed HTML markup on the "Thank You" page
-* Tested with WordPress 6.4-alpha-56530 and WooCommerce 8.1.0-rc.1
+* Tested up to WordPress 6.4-alpha-56530 and WooCommerce 8.1.0-rc.1
 
 = 5.3 - 2023-04-18 =
 * Fixed a bug introduced on version 5.2 when using the `woocommerce_nif_field_validate` filter to validate the Portuguese NIF
 
 = 5.2 - 2023-04-17 =
 * WordPress Coding Standards
-* Tested with WordPress 6.3-alpha-55644 and WooCommerce 7.6.0
+* Tested up to WordPress 6.3-alpha-55644 and WooCommerce 7.6.0
 
 = 5.1 - 2022-11-10 =
 * Tested and confirmed WooCommerce HPOS compatibility
 * Requires WooCommerce 5.0
-* Tested with WordPress 6.2-alpha-54748 and WooCommerce 7.1
+* Tested up to WordPress 6.2-alpha-54748 and WooCommerce 7.1
 
 = 5.0.0 - 2022-09-20 =
 * If NIF validation is active by using the `woocommerce_nif_field_validate` filter, the field will be set as invalid om the checkout form when the validation is performed and fails
 * Removed all WooCommerce pre 3.0 code
 * Requires WooCommerce 4.0
-* Tested with WordPress 6.1-alpha-54043 and WooCommerce 6.9.2
+* Tested up to WordPress 6.1-alpha-54043 and WooCommerce 6.9.2
 
 
 = 4.3.0 - 2022-06-29 =
 * New brand: PT Woo Plugins 🥳
 * Requires WordPress 5.0, WooCommerce 3.0 and PHP 7.0
-* Tested with WordPress 6.1-alpha-53556 and WooCommerce 6.7.0-beta.2
+* Tested up to WordPress 6.1-alpha-53556 and WooCommerce 6.7.0-beta.2
 
 = 4.2.6 - 2022-02-23 =
 * Check if the `is_checkout` function exists before calling it
-* Tested with WordPress 6.0-alpha-52790 and WooCommerce 6.3.0-rc.1
+* Tested up to WordPress 6.0-alpha-52790 and WooCommerce 6.3.0-rc.1
 
 = 4.2.5 - 2021-03-10 =
-* Tested with WordPress 5.8-alpha-50516 and WooCommerce 5.1.0
+* Tested up to WordPress 5.8-alpha-50516 and WooCommerce 5.1.0
 
 = 4.2.4.2 =
-* Tested with WordPress 5.6-alpha-49064 and WooCommerce 4.6.0-beta.1
+* Tested up to WordPress 5.6-alpha-49064 and WooCommerce 4.6.0-beta.1
 
 = 4.2.4.1 =
-* Tested with WooCommerce 4.0.0
+* Tested up to WooCommerce 4.0.0
 
 = 4.2.4 =
 * Changes on the InvoiceXpress banner
-* Tested with WordPress 5.3.3-alpha-46995 and WooCommerce 3.9.0-rc.2
+* Tested up to WordPress 5.3.3-alpha-46995 and WooCommerce 3.9.0-rc.2
 
 = 4.2.3 =
 * Hide the InvoiceXpress nag if the invoicing is already installed and active
-* Tested with WordPress 5.3.1-alpha-46798 and WooCommerce 3.8.1
+* Tested up to WordPress 5.3.1-alpha-46798 and WooCommerce 3.8.1
 
 = 4.2.2 =
 * Change InvoiceXpress nag interval from 30 to 90 days
-* Tested with WordPress 5.2.4-alpha-46074 and WooCommerce 3.8.0-beta.1
+* Tested up to WordPress 5.2.4-alpha-46074 and WooCommerce 3.8.0-beta.1
 * Requires PHP 5.6
 
 = 4.2.1 =
 * NIF field on Subscriptions via the admin order screen (thanks @ptravassos)
-* Tested with WooCommerce 3.6.5 and WordPress 5.2.2
+* Tested up to WooCommerce 3.6.5 and WordPress 5.2.2
 
 = 4.2 =
 * Add NIF to the WooCommerce REST `orders` and `customers` endpoints
 
 = 4.1.3 =
 * Fixed a fatal error when the `woocommerce_nif_field_validate` was set to true and the customer doesn’t have a country associated yet
-* Tested with WooCommerce 3.5.5 and WordPress 5.0.3
+* Tested up to WooCommerce 3.5.5 and WordPress 5.0.3
 
 = 4.1.2 =
-* Tested with WooCommerce 3.5.2
+* Tested up to WooCommerce 3.5.2
 * Bumped `WC tested up` tag
 * Bumped `Requires at least` tag
 
 = 4.1.1 =
-* Tested with WooCommerce 3.5
+* Tested up to WooCommerce 3.5
 * Bumped `WC tested up` tag
 * Bumped `Requires at least` tag
 
@@ -227,7 +235,7 @@ You can report any security bugs found in the source code of this plugin through
 = 4.0 =
 * Toggle the NIF field via javascript on the checkout page by default - if you need to get back to the old mechanism, you should false on the `woocommerce_nif_use_javascript` filter
 * New `woocommerce_nif_show_all_countries` to show the field for all countries instead of only to portuguese customers (not recommended)
-* Tested with WooCommerce 3.3
+* Tested up to WooCommerce 3.3
 * Filters examples updated
 * Improved the FAQ
 
@@ -245,13 +253,13 @@ You can report any security bugs found in the source code of this plugin through
 
 = 3.1 =
 * Removed the translation files from the plugin `lang` folder (the translations are now managed on WordPress.org’s GlotPress tool and will be automatically downloaded from there)
-* Tested with WooCommerce 3.2
+* Tested up to WooCommerce 3.2
 * Added `WC tested up to` tag on the plugin main file
 * Bumped `Tested up to` tag
 
 = 3.0 =
 * It’s now possible to validate the Portuguese NIF/NIPC check digit entered by the customer (by returninig true on the `woocommerce_nif_field_validate` filter)
-* Tested with WooCommerce 3.0.0-rc.2
+* Tested up to WooCommerce 3.0.0-rc.2
 * Changed version tests from 2.7 to 3.0
 * New `autocomplete` parameter set to 'on'
 * New `priority` parameter set to '120'

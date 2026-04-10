@@ -59,7 +59,7 @@ class PTWoo_NIF_Blocks_Integration implements IntegrationInterface {
 			'defaultValidate'         => woocommerce_nif_field_validate(),
 			'defaultMaxLength'        => woocommerce_nif_field_maxlength(),
 			'defaultShowAllCountries' => woocommerce_nif_show_all_countries(),
-			'defaultInvalidMessage'   => strip_tags( woocommerce_nif_invalid_message() ),
+			'defaultInvalidMessage'   => wp_strip_all_tags( woocommerce_nif_invalid_message() ),
 		);
 
 		return $data;

@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @param string $label The label.
  */
-function woocommerce_nif_field_label( $label ) {
+function woocommerce_nif_field_label( $label ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 	// Default is 'NIF / NIPC'
 	return 'NIF';
 }
@@ -24,7 +24,7 @@ add_filter( 'woocommerce_nif_field_label', 'woocommerce_nif_field_label' );
  *
  * @param string $placeholder The placeholder.
  */
-function woocommerce_nif_field_placeholder( $placeholder ) {
+function woocommerce_nif_field_placeholder( $placeholder ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 	// Default is 'Portuguese VAT identification number'
 	return 'VAT number';
 }
@@ -38,14 +38,14 @@ add_filter( 'woocommerce_nif_field_required', '__return_true' );
 /**
  * Make NIF field wide - Only for the classic checkout
  *
- * @param string $class The CSS class.
+ * @param string $the_class The CSS class.
  */
-function woocommerce_nif_field_class( $class ) {
+function woocommerce_nif_field_class( $the_class ) {
 	// Default is form-row-first
-	$class = array(
+	$the_class = array(
 		'form-row-wide',
 	);
-	return $class;
+	return $the_class;
 }
 add_filter( 'woocommerce_nif_field_class', 'woocommerce_nif_field_class' );
 // Make NIF field not clear.
@@ -56,7 +56,7 @@ add_filter( 'woocommerce_nif_field_clear', '__return_false' );
  *
  * @param string $autocomplete Autocomplete on or off.
  */
-function woocommerce_nif_field_autocomplete( $autocomplete ) {
+function woocommerce_nif_field_autocomplete( $autocomplete ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 	// Default is 'on'.
 	return 'off';
 }
@@ -67,7 +67,7 @@ add_filter( 'woocommerce_nif_field_autocomplete', 'woocommerce_nif_field_autocom
  *
  * @param integer $priority NIF field priority.
  */
-function woocommerce_nif_field_priority( $priority ) {
+function woocommerce_nif_field_priority( $priority ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 	// Default is 120.
 	return 1;
 }
@@ -78,7 +78,7 @@ add_filter( 'woocommerce_nif_field_priority', 'woocommerce_nif_field_priority' )
  *
  * @param integer $maxlength NIF field maxium length.
  */
-function woocommerce_nif_field_maxlength( $maxlength ) {
+function woocommerce_nif_field_maxlength( $maxlength ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 	// Default is 9.
 	return 10;
 }

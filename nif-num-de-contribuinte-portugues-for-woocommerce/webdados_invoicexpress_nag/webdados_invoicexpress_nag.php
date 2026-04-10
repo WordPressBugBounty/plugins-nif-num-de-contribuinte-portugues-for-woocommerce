@@ -27,8 +27,8 @@ function webdados_invoicexpress_nag() {
 				<img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) . 'invoicexpress-woocommerce-logo.png' ); ?>" style="float: left; max-width: 100px; height: auto; margin-right: 1em;"/>
 				<strong><?php esc_html_e( 'Are you already issuing automatic invoices on your WooCommerce store?', 'nif-num-de-contribuinte-portugues-for-woocommerce' ); ?></strong>
 				<br/>
-			<?php
-				echo sprintf(
+				<?php
+				printf(
 					/* translators: %1$s link opening tag, %2$s link cosing tag */
 					__( 'If not, get to know our new plugin: %1$sInvoicing with InvoiceXpress for WooCommerce%2$s', 'nif-num-de-contribuinte-portugues-for-woocommerce' ), //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					sprintf(
@@ -37,7 +37,7 @@ function webdados_invoicexpress_nag() {
 					),
 					'</a>'
 				);
-			?>
+				?>
 				<br/>
 				<?php _e( 'Use the coupon <strong>webdados</strong> for 10% discount!', 'nif-num-de-contribuinte-portugues-for-woocommerce' ); //phpcs:ignore WordPress.Security.EscapeOutput.UnsafePrintingFunction ?>
 			</p>
