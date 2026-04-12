@@ -3,11 +3,10 @@
  * Plugin Name:          NIF (Num. de Contribuinte Português) for WooCommerce
  * Plugin URI:           https://www.webdados.pt/wordpress/plugins/nif-de-contribuinte-portugues-woocommerce-wordpress/
  * Description:          This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new field to WooCommerce checkout and order details, if the billing address is from Portugal.
- * Version:              7.0
+ * Version:              7.2
  * Author:               Naked Cat Plugins (by Webdados)
  * Author URI:           https://nakedcatplugins.com
  * Text Domain:          nif-num-de-contribuinte-portugues-for-woocommerce
- * Domain Path:          /lang
  * Requires at least:    5.8
  * Tested up to:         7.0
  * Requires PHP:         7.2
@@ -460,13 +459,13 @@ add_action(
 	'admin_init',
 	function () {
 		if (
-		( ! defined( 'WEBDADOS_INVOICEXPRESS_NAG' ) )
-		&&
-		( ! class_exists( '\Webdados\InvoiceXpressWooCommerce\Plugin' ) )
-		&&
-		empty( get_transient( 'webdados_invoicexpress_nag' ) ) // Not used anymore, but kept for backwards compatibility
-		&&
-		( intval( get_user_meta( get_current_user_id(), 'webdados_invoicexpress_nag_dismissed_until', true ) ) < time() )
+			( ! defined( 'WEBDADOS_INVOICEXPRESS_NAG' ) )
+			&&
+			( ! class_exists( '\Webdados\InvoiceXpressWooCommerce\Plugin' ) )
+			&&
+			empty( get_transient( 'webdados_invoicexpress_nag' ) ) // Not used anymore, but kept for backwards compatibility
+			&&
+			( intval( get_user_meta( get_current_user_id(), 'webdados_invoicexpress_nag_dismissed_until', true ) ) < time() )
 		) {
 			define( 'WEBDADOS_INVOICEXPRESS_NAG', true );
 			require_once 'webdados_invoicexpress_nag/webdados_invoicexpress_nag.php';
@@ -476,7 +475,7 @@ add_action(
 
 /* Recomment ifthenpay */
 if ( ! defined( 'WEBDADOS_RECOMMEND_IFTHENPAY' ) ) {
-	require_once 'recommend-ifthenpay/class-recommend-ifthenpay.php';
+	require_once 'recommend-ifthenpay/recommend-ifthenpay.php';
 }
 
 /* If you're reading this you must know what you're doing ;-) Greetings from sunny Portugal! */

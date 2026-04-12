@@ -4,7 +4,7 @@ Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 7.0
+Stable tag: 7.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,8 +100,12 @@ You can report any security bugs found in the source code of this plugin through
 
 == Changelog ==
 
+= 7.2 - 2026-04-12 =
+* [FIX] PHP fatal error, introduced in 7.0, in specific scenarios
+* [FIX] Version number
+
 = 7.0 - 2026-04-10 =
-* [NEW] Free plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
+* [NEW] Plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
 * [TWEAK] Added [our ifthenpay plugin](https://wordpress.org/plugins/multibanco-ifthen-software-gateway-for-woocommerce/) as a suggested payment gateway in WooCommerce, if still not present (can be removed by setting the `NAKEDCAT_RECOMMEND_IFTHENPAY` constant to true)
 * [DEV] Removed `load_plugin_textdomain` call as WordPress handles it
 * [DEV] Improved PHPCS rules
