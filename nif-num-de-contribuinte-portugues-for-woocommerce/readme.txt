@@ -4,7 +4,7 @@ Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 7.2
+Stable tag: 7.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,12 @@ If you reach us by email or any other direct contact method, we’ll assume you 
 You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
+
+= 7.3 - 2026-06-15 =
+* [FIX] NIF saved on the customer's profile / "My Account" billing address wasn't pre-filled on the WooCommerce Checkout Block
+* [FIX] NIF field markup on the WooCommerce Checkout Block didn't match the standard checkout step structure (heading container)
+* [DEV] Removed the unused/stale `PTWOO_NIF_VERSION` constant; checkout block assets now version off the plugin header version
+* [DEV] Tested up to WordPress 7.1-alpha-62456 and WooCommerce 10.9.0-beta.1
 
 = 7.2 - 2026-04-12 =
 * [FIX] PHP fatal error, introduced in 7.0, in specific scenarios

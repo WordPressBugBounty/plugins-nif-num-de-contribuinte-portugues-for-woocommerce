@@ -134,6 +134,8 @@ class PTWoo_NIF_Blocks_Integration implements IntegrationInterface {
 			return filemtime( $file );
 		}
 
-		return PTWOO_NIF_VERSION;
+		$plugin_data = get_file_data( PTWOO_NIF_PLUGIN_DIR . 'woocommerce_nif.php', array( 'Version' => 'Version' ) );
+
+		return $plugin_data['Version'];
 	}
 }
