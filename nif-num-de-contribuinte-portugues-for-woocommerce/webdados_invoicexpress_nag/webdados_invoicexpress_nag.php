@@ -12,11 +12,11 @@ function webdados_invoicexpress_nag() {
 		<script type="text/javascript">
 		jQuery(function($) {
 			$( document ).on( 'click', '#webdados_invoicexpress_nag .notice-dismiss', function () {
-				//AJAX SET TRANSIENT FOR 90 DAYS
 				$.ajax( ajaxurl, {
 					type: 'POST',
 					data: {
 						action: 'dismiss_webdados_invoicexpress_nag',
+						nonce:  '<?php echo esc_js( wp_create_nonce( 'dismiss_webdados_invoicexpress_nag' ) ); ?>',
 					}
 				});
 			});
@@ -39,7 +39,7 @@ function webdados_invoicexpress_nag() {
 				);
 				?>
 				<br/>
-				<?php _e( 'Use the coupon <strong>webdados</strong> for 10% discount!', 'nif-num-de-contribuinte-portugues-for-woocommerce' ); //phpcs:ignore WordPress.Security.EscapeOutput.UnsafePrintingFunction ?>
+				<?php echo wp_kses( __( 'Use the coupon <strong>webdados</strong> for 10% discount!', 'nif-num-de-contribuinte-portugues-for-woocommerce' ), array( 'strong' => array() ) ); ?>
 			</p>
 		</div>
 		<?php
@@ -47,9 +47,10 @@ function webdados_invoicexpress_nag() {
 add_action( 'admin_notices', 'webdados_invoicexpress_nag' );
 
 /**
- * Dismiss InvoiceXpress for WooCommerce nag
+ * Dismiss InvoiceXpress for WooCommerce nag for 120 days
  */
 function dismiss_webdados_invoicexpress_nag() {
+	check_ajax_referer( 'dismiss_webdados_invoicexpress_nag', 'nonce' );
 	$days                 = 120;
 	$expiration_timestamp = time() + ( $days * DAY_IN_SECONDS );
 	update_user_meta( get_current_user_id(), 'webdados_invoicexpress_nag_dismissed_until', $expiration_timestamp );

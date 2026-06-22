@@ -4,7 +4,7 @@ Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 7.3
+Stable tag: 8.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,7 +20,7 @@ This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new fi
 * It’s possible to edit the customer’s NIF/NIPC field on "My Account - Billing Address" and on the User edit screen on wp-admin.
 * NIF/NIPC check digit validation (if activated via filter, or block option)
 * WooCommerce High-Performance Order Storage compatible
-* WooCommerce Checkout Block compatible (in beta)
+* WooCommerce Checkout Block compatible
 
 = Are you already issuing automatic invoices on your WooCommerce store? =
 
@@ -99,6 +99,15 @@ If you reach us by email or any other direct contact method, we’ll assume you 
 You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
+
+= 8.0 - 2026-06-22 =
+* [NEW] Complete rewrite the blocks checkout field for performance
+* [FIX] Blocks checkout: validation error no longer appears while typing — it shows only after leaving the NIF field
+* [FIX] Blocks checkout: NIF is now validated client-side for instant feedback, without waiting for a server round-trip
+* [FIX] Blocks checkout: "Place Order" button no longer flickers during typing (debounced server sync)
+* [FIX] `woocommerce_nif_invalid_message` filter now applied in the "My Account" billing address save path, consistent with the checkout
+* [FIX] WordPress Coding Standards improvements in bundled modules (nonce on admin notice dismiss, safe HTML output)
+* [DEV] Tested up to WordPress 7.1-alpha-62536 and WooCommerce 10.9.0-beta.2
 
 = 7.3 - 2026-06-15 =
 * [FIX] NIF saved on the customer's profile / "My Account" billing address wasn't pre-filled on the WooCommerce Checkout Block
