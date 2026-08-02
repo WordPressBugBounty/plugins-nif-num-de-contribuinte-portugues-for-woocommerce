@@ -4,7 +4,7 @@ Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 8.0
+Stable tag: 8.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,10 @@ If you reach us by email or any other direct contact method, we’ll assume you 
 You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
+
+= 8.1 - 2026-08-02 =
+* [FIX] Blocks checkout: NIF is now also validated server-side when the order is processed, not just client-side, so a missing or invalid NIF can no longer be submitted with JavaScript disabled or by calling the Store API directly
+* [DEV] Bundled ifthenpay suggestion module updated: documented the intentional Portugal-only display exception, guarded an array_unshift() call against a possible future WooCommerce REST response change
 
 = 8.0 - 2026-06-22 =
 * [NEW] Complete rewrite the blocks checkout field for performance

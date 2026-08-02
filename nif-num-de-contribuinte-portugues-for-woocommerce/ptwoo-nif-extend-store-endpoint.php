@@ -1,5 +1,6 @@
 <?php
 use Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema;
+use Automattic\WooCommerce\StoreApi\Exceptions\RouteException;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -122,6 +123,17 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 		}
 
 		$billing_nif = $session_data['billingNif'];
+
+		// Server-side validation. The client-side check in the Blocks checkout can be bypassed
+		// (JS disabled, or the Store API called directly), so it must be enforced here too, just
+		// like the classic checkout does in woocommerce_nif_checkout_process().
+		if ( ! $this->is_nif_valid() ) {
+			throw new RouteException(
+				'nif_num_de_contribuinte_portugues_for_woocommerce_invalid_nif',
+				woocommerce_nif_invalid_message(),
+				400
+			);
+		}
 
 		// Store NIF in order meta.
 		$order->update_meta_data( '_billing_nif', $billing_nif );
