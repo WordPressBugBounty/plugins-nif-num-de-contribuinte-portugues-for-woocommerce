@@ -2,9 +2,9 @@
 Contributors: nakedcatplugins, webdados
 Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 8.1
+Stable tag: 8.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,9 +100,14 @@ You can report any security bugs found in the source code of this plugin through
 
 == Changelog ==
 
+= 8.2 - 2026-08-24 =
+* [FIX] The optional NIF prefix check now uses the complete list of prefixes issued by the Autoridade Tributária (1, 2, 3, 45, 5, 6, 70, 71, 72, 74, 75, 77, 78, 79, 8, 90, 91, 98 and 99). It previously rejected valid numbers belonging to non-residents, undivided estates and investment funds, and accepted 92 to 97, which are never issued. This check only runs when `woocommerce_valida_nif()` is called with its second argument set to false, so the default behaviour is unchanged
+* [DEV] Bundled ifthenpay suggestion module updated
+* [DEV] Tested up to WordPress 7.2-alpha-63323 and WooCommerce 11.1.0-beta.1
+
 = 8.1 - 2026-08-02 =
 * [FIX] Blocks checkout: NIF is now also validated server-side when the order is processed, not just client-side, so a missing or invalid NIF can no longer be submitted with JavaScript disabled or by calling the Store API directly
-* [DEV] Bundled ifthenpay suggestion module updated: documented the intentional Portugal-only display exception, guarded an array_unshift() call against a possible future WooCommerce REST response change
+* [DEV] Bundled ifthenpay suggestion module updated
 
 = 8.0 - 2026-06-22 =
 * [NEW] Complete rewrite the blocks checkout field for performance

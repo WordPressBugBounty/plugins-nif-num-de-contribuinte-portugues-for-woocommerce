@@ -109,6 +109,7 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 	 *
 	 * @param  \WC_Order $order Order object.
 	 * @return void
+	 * @throws RouteException If the NIF is invalid.
 	 */
 	public function process_order( $order ) {
 
@@ -130,7 +131,7 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 		if ( ! $this->is_nif_valid() ) {
 			throw new RouteException(
 				'nif_num_de_contribuinte_portugues_for_woocommerce_invalid_nif',
-				woocommerce_nif_invalid_message(),
+				wp_kses_post( woocommerce_nif_invalid_message() ),
 				400
 			);
 		}

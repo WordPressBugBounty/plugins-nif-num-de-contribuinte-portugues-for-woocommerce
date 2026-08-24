@@ -3,15 +3,15 @@
  * Plugin Name:          NIF (Num. de Contribuinte Português) for WooCommerce
  * Plugin URI:           https://www.webdados.pt/wordpress/plugins/nif-de-contribuinte-portugues-woocommerce-wordpress/
  * Description:          This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new field to WooCommerce checkout and order details, if the billing address is from Portugal.
- * Version:              8.1
+ * Version:              8.2
  * Author:               Naked Cat Plugins (by Webdados)
  * Author URI:           https://nakedcatplugins.com
  * Text Domain:          nif-num-de-contribuinte-portugues-for-woocommerce
  * Requires at least:    5.8
- * Tested up to:         7.0
+ * Tested up to:         7.1
  * Requires PHP:         7.2
  * WC requires at least: 7.1
- * WC tested up to:      10.9
+ * WC tested up to:      11.1
  * Requires Plugins:     woocommerce
  **/
 
@@ -319,6 +319,48 @@ add_action(
 			add_action( 'woocommerce_after_save_address_validation', 'woocommerce_nif_after_save_address_validation', 10, 3 );
 
 			/**
+			 * Verifica se o NIF começa por um dos prefixos atribuídos pela Autoridade
+			 * Tributária, de acordo com o Ofício-Circulado n.º 90 014 da DSRC.
+			 *
+			 * Nota de implementação: os prefixos de dois dígitos têm de ser comparados
+			 * como texto e não como um conjunto de caracteres. Testar apenas o primeiro
+			 * carácter deixaria de fora as famílias 45 e 7x (não residentes, heranças
+			 * indivisas, fundos de investimento) e aceitaria 92 a 97, que não existem.
+			 *
+			 * @param string $nif The NIF number, already trimmed and known to be 9 digits.
+			 * @return bool
+			 */
+			function woocommerce_nif_prefixo_valido( $nif ) {
+				$prefixos = array(
+					'1', // Pessoa singular.
+					'2', // Pessoa singular.
+					'3', // Pessoa singular, em uso desde junho de 2019.
+					'45', // Pessoa singular não residente com retenção definitiva.
+					'5', // Pessoa coletiva.
+					'6', // Pessoa coletiva pública.
+					'70', // Herança indivisa.
+					'71', // Não residente coletivo com retenção definitiva.
+					'72', // Fundo de investimento ou de pensões.
+					'74', // Herança indivisa.
+					'75', // Herança indivisa.
+					'77', // Atribuição oficiosa.
+					'78', // Não residente em processo de reembolso de IVA.
+					'79', // Regime excecional (Expo 98).
+					'8', // Empresário em nome individual, em desuso.
+					'90', // Condomínio ou sociedade irregular.
+					'91', // Condomínio ou sociedade irregular.
+					'98', // Não residente sem estabelecimento estável.
+					'99', // Sociedade civil sem personalidade jurídica.
+				);
+				foreach ( $prefixos as $prefixo ) {
+					if ( 0 === strpos( $nif, $prefixo ) ) {
+						return true;
+					}
+				}
+				return false;
+			}
+
+			/**
 			 * NIF Validation
 			 *
 			 * @param string $nif         The NIF number.
@@ -330,35 +372,25 @@ add_action(
 				// Verificamos se é numérico e tem comprimento 9
 				if ( ! is_numeric( $nif ) || strlen( $nif ) !== 9 || $nif === '000000000' ) {
 					return false;
-				} else {
-					$nif_split = str_split( $nif );
-					// O primeiro digíto tem de ser 1, 2, 5, 6, 8 ou 9
-					// Ou não, se optarmos por ignorar esta "regra"
-					if (
-						in_array( $nif_split[0], array( '1', '2', '5', '6', '8', '9' ), true )
-						||
-						$ignore_first
-					) {
-						// Calculamos o dígito de controlo
-						$check_digit = 0;
-						for ( $i = 0; $i < 8; $i++ ) {
-							$check_digit += intval( $nif_split[ $i ] ) * ( 10 - $i - 1 );
-						}
-						$check_digit = 11 - ( $check_digit % 11 );
-						// Se der 10 então o dígito de controlo tem de ser 0
-						if ( $check_digit >= 10 ) {
-							$check_digit = 0;
-						}
-						// Comparamos com o último dígito
-						if ( intval( $check_digit ) === intval( $nif_split[8] ) ) {
-							return true;
-						} else {
-							return false;
-						}
-					} else {
-						return false;
-					}
 				}
+				// O NIF tem de começar por um dos prefixos atribuídos pela AT, ou não,
+				// se optarmos por ignorar esta "regra", que é o comportamento por omissão.
+				if ( ! $ignore_first && ! woocommerce_nif_prefixo_valido( $nif ) ) {
+					return false;
+				}
+				$nif_split = str_split( $nif );
+				// Calculamos o dígito de controlo
+				$check_digit = 0;
+				for ( $i = 0; $i < 8; $i++ ) {
+					$check_digit += intval( $nif_split[ $i ] ) * ( 10 - $i - 1 );
+				}
+				$check_digit = 11 - ( $check_digit % 11 );
+				// Se der 10 ou 11 então o dígito de controlo tem de ser 0
+				if ( $check_digit >= 10 ) {
+					$check_digit = 0;
+				}
+				// Comparamos com o último dígito
+				return intval( $check_digit ) === intval( $nif_split[8] );
 			}
 
 			/**
@@ -472,7 +504,7 @@ add_action(
 );
 
 /* Recomment ifthenpay */
-if ( ! defined( 'WEBDADOS_RECOMMEND_IFTHENPAY' ) ) {
+if ( ! defined( 'NAKEDCAT_RECOMMEND_IFTHENPAY' ) ) {
 	require_once 'recommend-ifthenpay/recommend-ifthenpay.php';
 }
 
