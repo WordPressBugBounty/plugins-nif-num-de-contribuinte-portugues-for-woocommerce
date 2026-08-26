@@ -4,7 +4,7 @@ Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 8.2
+Stable tag: 8.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,12 +22,21 @@ This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new fi
 * WooCommerce High-Performance Order Storage compatible
 * WooCommerce Checkout Block compatible
 
+= Do you also sell to businesses in other European Union countries? =
+
+Get to know [VAT Number and EU VIES Validation for WooCommerce](https://wbds.pt/buv), our premium plugin for the whole European Union. It collects the customer VAT identification number, pre-validates it on your own server, confirms it against VIES and removes VAT on qualifying intra-EU B2B orders.
+
+It is a replacement for this plugin rather than an add-on to it, and its Zero-Touch Migration reads the numbers this plugin has already stored, so there is nothing to export, import or schedule: the numbers convert themselves as customers come back.
+
+[Launch offer](https://wbds.pt/buv): 50% off the first year, or 25% off a lifetime licence.
+
 = Are you already issuing automatic invoices on your WooCommerce store? =
 
 If not, get to know our new plugin: [Invoicing with InvoiceXpress for WooCommerce](https://wordpress.org/plugins/woo-billing-with-invoicexpress/)
 
 == Already know our other WooCommerce (premium) plugins? ==
 
+* [VAT Number and EU VIES Validation for WooCommerce](https://wbds.pt/buv) - Collect and validate VAT identification numbers for the whole European Union, confirm them against VIES and remove VAT on qualifying intra-EU B2B orders
 * [Portuguese Postcodes for WooCommerce](https://nakedcatplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
 * [Invoicing with InvoiceXpress for WooCommerce](https://invoicewoo.com/) - Automatically issue invoices directly from the WooCommerce order
 * [DPD Portugal for WooCommerce](https://nakedcatplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
@@ -100,8 +109,13 @@ You can report any security bugs found in the source code of this plugin through
 
 == Changelog ==
 
+= 8.3 - 2026-08-26 =
+* [NEW] There is now an alternative to this plugin for shops selling to businesses across the European Union: VAT Number and EU VIES Validation for WooCommerce, our premium plugin, which validates VAT identification numbers for every EU country, confirms them against VIES and removes VAT on qualifying intra-EU B2B orders, and whose Zero-Touch Migration reads the numbers this plugin already stored so there is nothing to export or import. It is introduced through a dismissible notice, which is never shown if that plugin is already active
+* [DEV] Tested up to WordPress 7.2-alpha-63347 and WooCommerce 11.1.0-beta.2
+
 = 8.2 - 2026-08-24 =
 * [FIX] The optional NIF prefix check now uses the complete list of prefixes issued by the Autoridade Tributária (1, 2, 3, 45, 5, 6, 70, 71, 72, 74, 75, 77, 78, 79, 8, 90, 91, 98 and 99). It previously rejected valid numbers belonging to non-residents, undivided estates and investment funds, and accepted 92 to 97, which are never issued. This check only runs when `woocommerce_valida_nif()` is called with its second argument set to false, so the default behaviour is unchanged
+* [FIX] Blocks checkout: the invalid NIF message now keeps any formatting or links added through the `woocommerce_nif_invalid_message` filter, instead of showing the markup as plain text
 * [DEV] Bundled ifthenpay suggestion module updated
 * [DEV] Tested up to WordPress 7.2-alpha-63323 and WooCommerce 11.1.0-beta.1
 
