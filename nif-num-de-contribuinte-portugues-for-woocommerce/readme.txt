@@ -4,7 +4,7 @@ Tags: ecommerce, nif, nipc, vat, tax
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 8.3
+Stable tag: 8.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,6 +37,7 @@ If not, get to know our new plugin: [Invoicing with InvoiceXpress for WooCommerc
 == Already know our other WooCommerce (premium) plugins? ==
 
 * [VAT Number and EU VIES Validation for WooCommerce](https://wbds.pt/buv) - Collect and validate VAT identification numbers for the whole European Union, confirm them against VIES and remove VAT on qualifying intra-EU B2B orders
+* [EU Guarantee Notice and GARAN Label for WordPress and WooCommerce](https://nakedcatplugins.com/product/eu-guarantee-notice-and-garan-label-for-wordpress-and-woocommerce/?utm_source=wordpress.org&utm_medium=link&utm_campaign=nifportugues_woocommerce_plugin) - Show the mandatory EU guarantee notice and the EU GARAN label with the official European Commission artwork, and let Proof of Notice check every day that the notice is still on your site
 * [Portuguese Postcodes for WooCommerce](https://nakedcatplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
 * [Invoicing with InvoiceXpress for WooCommerce](https://invoicewoo.com/) - Automatically issue invoices directly from the WooCommerce order
 * [DPD Portugal for WooCommerce](https://nakedcatplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
@@ -108,6 +109,10 @@ If you reach us by email or any other direct contact method, we’ll assume you 
 You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
+
+= 8.4 - 2026-09-30 =
+* [TWEAK] The launch offer for VAT Number and EU VIES Validation for WooCommerce, shown in the notice presenting it, is extended until November 30
+* [DEV] Tested up to WordPress 7.2-alpha-64009 and WooCommerce 11.2.0-beta.2
 
 = 8.3 - 2026-08-26 =
 * [NEW] There is now an alternative to this plugin for shops selling to businesses across the European Union: VAT Number and EU VIES Validation for WooCommerce, our premium plugin, which validates VAT identification numbers for every EU country, confirms them against VIES and removes VAT on qualifying intra-EU B2B orders, and whose Zero-Touch Migration reads the numbers this plugin already stored so there is nothing to export or import. It is introduced through a dismissible notice, which is never shown if that plugin is already active

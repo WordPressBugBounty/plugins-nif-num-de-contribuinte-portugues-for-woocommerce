@@ -51,7 +51,7 @@ class Nag {
 	 * The date itself is never printed: it belongs on the product page, where it can be
 	 * changed without a plugin release.
 	 */
-	const OFFER_ENDS = '2026-09-30T23:59:59+01:00';
+	const OFFER_ENDS = '2026-11-30T23:59:59+00:00';
 
 	/**
 	 * How many customers the coupon is limited to. Stated in the copy so nobody counts on
