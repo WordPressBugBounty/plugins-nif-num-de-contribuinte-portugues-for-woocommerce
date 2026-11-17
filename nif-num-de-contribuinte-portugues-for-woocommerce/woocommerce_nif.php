@@ -3,15 +3,15 @@
  * Plugin Name:          NIF (Num. de Contribuinte Português) for WooCommerce
  * Plugin URI:           https://www.webdados.pt/wordpress/plugins/nif-de-contribuinte-portugues-woocommerce-wordpress/
  * Description:          This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new field to WooCommerce checkout and order details, if the billing address is from Portugal.
- * Version:              8.4
+ * Version:              8.5
  * Author:               Naked Cat Plugins (by Webdados)
  * Author URI:           https://nakedcatplugins.com
  * Text Domain:          nif-num-de-contribuinte-portugues-for-woocommerce
- * Requires at least:    5.8
+ * Requires at least:    6.7
  * Tested up to:         7.1
- * Requires PHP:         7.2
- * WC requires at least: 7.1
- * WC tested up to:      11.2
+ * Requires PHP:         7.4
+ * WC requires at least: 9.9
+ * WC tested up to:      11.3
  * Requires Plugins:     woocommerce
  **/
 
@@ -25,11 +25,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Define constants.
 define( 'PTWOO_NIF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PTWOO_NIF_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'PTWOO_NIF_REQUIRED_WC_VERSION', '9.9' );
+
+/**
+ * Whether WooCommerce is active and recent enough for this plugin to load.
+ *
+ * @return bool
+ */
+function woocommerce_nif_wc_ok() {
+	return class_exists( 'WooCommerce' ) && defined( 'WC_VERSION' ) && version_compare( WC_VERSION, PTWOO_NIF_REQUIRED_WC_VERSION, '>=' );
+}
+
+/* WooCommerce too old: nothing loads, so say so, or the NIF field just disappears from the checkout */
+add_action(
+	'admin_notices',
+	function () {
+		if ( ! defined( 'WC_VERSION' ) || woocommerce_nif_wc_ok() || ! current_user_can( 'activate_plugins' ) ) {
+			return;
+		}
+		printf(
+			'<div class="notice notice-error"><p>%s</p></div>',
+			esc_html(
+				sprintf(
+					/* translators: 1: plugin name, 2: required WooCommerce version, 3: installed WooCommerce version */
+					__( '%1$s requires WooCommerce %2$s or later, and this website is running WooCommerce %3$s. The NIF field is not shown at checkout until WooCommerce is updated.', 'nif-num-de-contribuinte-portugues-for-woocommerce' ),
+					'NIF (Num. de Contribuinte Português) for WooCommerce',
+					PTWOO_NIF_REQUIRED_WC_VERSION,
+					WC_VERSION
+				)
+			)
+		);
+	}
+);
 
 add_action(
 	'plugins_loaded',
 	function () {
-		if ( class_exists( 'WooCommerce' ) && defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '7.1', '>=' ) ) {
+		if ( woocommerce_nif_wc_ok() ) {
 
 			/**
 			 * Init, load textdomain and enqueue scripts
@@ -470,6 +502,10 @@ add_action(
 add_action(
 	'woocommerce_blocks_loaded',
 	function () {
+		// It uses the functions defined above, which only exist with a recent enough WooCommerce.
+		if ( ! woocommerce_nif_wc_ok() ) {
+			return;
+		}
 		require_once __DIR__ . '/ptwoo-nif-blocks-integration.php';
 		require_once __DIR__ . '/ptwoo-nif-extend-store-endpoint.php';
 

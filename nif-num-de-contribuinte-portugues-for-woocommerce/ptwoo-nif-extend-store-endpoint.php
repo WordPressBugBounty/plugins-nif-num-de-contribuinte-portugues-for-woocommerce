@@ -1,5 +1,6 @@
 <?php
 use Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema;
+use Automattic\WooCommerce\StoreApi\Schemas\V1\CheckoutSchema;
 use Automattic\WooCommerce\StoreApi\Exceptions\RouteException;
 
 // Exit if accessed directly.
@@ -11,6 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class for extending the WooCommerce Store API
  */
 class PTWoo_NIF_Extend_Store_Endpoint {
+
+	/**
+	 * The field's data sent with the Place Order request being processed, if any.
+	 *
+	 * @var array|null
+	 */
+	private $checkout_request_data = null;
 
 	/**
 	 * The name of the extension.
@@ -35,6 +43,16 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 			)
 		);
 
+		// The NIF also comes with the Place Order request, as the field's value when it was clicked.
+		woocommerce_store_api_register_endpoint_data(
+			array(
+				'endpoint'        => CheckoutSchema::IDENTIFIER,
+				'namespace'       => $this->get_name(),
+				'schema_callback' => array( $this, 'store_api_checkout_schema_callback' ),
+				'schema_type'     => ARRAY_A,
+			)
+		);
+
 		woocommerce_store_api_register_update_callback(
 			array(
 				'namespace' => $this->get_name(),
@@ -42,6 +60,7 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 			)
 		);
 
+		add_action( 'woocommerce_store_api_checkout_update_order_from_request', array( $this, 'update_from_checkout_request' ), 10, 2 );
 		add_action( 'woocommerce_store_api_checkout_order_processed', array( $this, 'process_order' ) );
 	}
 
@@ -60,6 +79,75 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 				'optional'    => ! woocommerce_nif_field_required(),
 			),
 		);
+	}
+
+	/**
+	 * Schema of the data the field sends with the Place Order request.
+	 *
+	 * Every property accepts null, which is what a request without them (a page still running an
+	 * older version of the field's script) gets, so they can be told apart from an empty field.
+	 *
+	 * @return array
+	 */
+	public function store_api_checkout_schema_callback() {
+		return array(
+			'billingNif' => array(
+				'description' => __( 'NIF / NIPC', 'nif-num-de-contribuinte-portugues-for-woocommerce' ),
+				'type'        => array( 'string', 'null' ),
+				'context'     => array( 'view', 'edit' ),
+			),
+			'isRequired' => array(
+				'description' => 'Whether the field is required',
+				'type'        => array( 'boolean', 'null' ),
+				'context'     => array( 'view', 'edit' ),
+			),
+			'validate'   => array(
+				'description' => 'Whether the field is validated',
+				'type'        => array( 'boolean', 'null' ),
+				'context'     => array( 'view', 'edit' ),
+			),
+		);
+	}
+
+	/**
+	 * Keep the NIF sent with the Place Order request, for process_order() and is_nif_valid().
+	 *
+	 * The field also keeps the session up to date through cart updates, but those are sent after
+	 * the shopper pauses typing, so the last one may not have been sent, or answered, when Place
+	 * Order is clicked. The value sent with the order is the one in the field at that moment.
+	 *
+	 * It is kept on this object rather than written to the session: by the time the order is
+	 * processed, later in the same request, the session no longer holds a value written here.
+	 *
+	 * @param \WC_Order        $order   Order object.
+	 * @param \WP_REST_Request $request Checkout request.
+	 * @return void
+	 */
+	public function update_from_checkout_request( $order, $request ) {
+		$extensions = $request->get_param( 'extensions' );
+		$data       = is_array( $extensions ) && isset( $extensions[ $this->get_name() ] ) ? $extensions[ $this->get_name() ] : null;
+
+		// A page still running an older version of the field's script sends nothing (null once
+		// sanitized): the session's NIF is used, as before.
+		if ( ! is_array( $data ) || ! isset( $data['billingNif'] ) ) {
+			return;
+		}
+
+		$this->checkout_request_data = array(
+			'billingNif' => sanitize_text_field( (string) $data['billingNif'] ),
+			'isRequired' => ! empty( $data['isRequired'] ),
+			'validate'   => ! empty( $data['validate'] ),
+		);
+	}
+
+	/**
+	 * The field's data for the order being placed: the one sent with Place Order, or the
+	 * session's.
+	 *
+	 * @return array
+	 */
+	public function get_nif_data() {
+		return null !== $this->checkout_request_data ? $this->checkout_request_data : $this->get_session_data();
 	}
 
 	/**
@@ -117,7 +205,7 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 			return;
 		}
 
-		$session_data = $this->get_session_data();
+		$session_data = $this->get_nif_data();
 
 		if ( empty( $session_data ) ) {
 			return;
@@ -151,6 +239,7 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 
 		// Clear the extension's session data.
 		wc()->session->__unset( $this->get_name() );
+		$this->checkout_request_data = null;
 	}
 
 	/**
@@ -188,7 +277,7 @@ class PTWoo_NIF_Extend_Store_Endpoint {
 	 * @return boolean
 	 */
 	public function is_nif_valid() {
-		$session_data     = $this->get_session_data();
+		$session_data     = $this->get_nif_data();
 		$billing_nif      = $session_data['billingNif'];
 		$is_required      = $session_data['isRequired'];
 		$needs_validation = $session_data['validate'];

@@ -1,10 +1,10 @@
 === NIF (Num. de Contribuinte Português) for WooCommerce ===
 Contributors: nakedcatplugins, webdados
 Tags: ecommerce, nif, nipc, vat, tax
-Requires at least: 5.8
+Requires at least: 6.7
 Tested up to: 7.1
-Requires PHP: 7.2
-Stable tag: 8.4
+Requires PHP: 7.4
+Stable tag: 8.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,10 +17,10 @@ This plugin adds the Portuguese VAT identification number (NIF/NIPC) as a new fi
 = Features: =
 
 * Adds the Portuguese VAT identification number (NIF/NIPC) to the WooCommerce Checkout fields, Order admin fields, Order Emails and "Thank You" page;
-* It’s possible to edit the customer’s NIF/NIPC field on "My Account - Billing Address" and on the User edit screen on wp-admin.
-* NIF/NIPC check digit validation (if activated via filter, or block option)
-* WooCommerce High-Performance Order Storage compatible
-* WooCommerce Checkout Block compatible
+* It’s possible to edit the customer’s NIF/NIPC field on "My Account - Billing Address" and on the User edit screen on wp-admin;
+* NIF/NIPC check digit validation (if activated via filter, or block option);
+* WooCommerce High-Performance Order Storage compatible;
+* WooCommerce Checkout Block compatible;
 
 = Do you also sell to businesses in other European Union countries? =
 
@@ -28,11 +28,11 @@ Get to know [VAT Number and EU VIES Validation for WooCommerce](https://wbds.pt/
 
 It is a replacement for this plugin rather than an add-on to it, and its Zero-Touch Migration reads the numbers this plugin has already stored, so there is nothing to export, import or schedule: the numbers convert themselves as customers come back.
 
-[Launch offer](https://wbds.pt/buv): 50% off the first year, or 25% off a lifetime licence.
+[Launch offer](https://wbds.pt/buv): 50% off the first year, or 25% off a lifetime license.
 
 = Are you already issuing automatic invoices on your WooCommerce store? =
 
-If not, get to know our new plugin: [Invoicing with InvoiceXpress for WooCommerce](https://wordpress.org/plugins/woo-billing-with-invoicexpress/)
+If not, get to know our plugin: [Invoicing with InvoiceXpress for WooCommerce](https://wordpress.org/plugins/woo-billing-with-invoicexpress/)
 
 == Already know our other WooCommerce (premium) plugins? ==
 
@@ -40,14 +40,14 @@ If not, get to know our new plugin: [Invoicing with InvoiceXpress for WooCommerc
 * [EU Guarantee Notice and GARAN Label for WordPress and WooCommerce](https://nakedcatplugins.com/product/eu-guarantee-notice-and-garan-label-for-wordpress-and-woocommerce/?utm_source=wordpress.org&utm_medium=link&utm_campaign=nifportugues_woocommerce_plugin) - Show the mandatory EU guarantee notice and the EU GARAN label with the official European Commission artwork, and let Proof of Notice check every day that the notice is still on your site
 * [Portuguese Postcodes for WooCommerce](https://nakedcatplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
 * [Invoicing with InvoiceXpress for WooCommerce](https://invoicewoo.com/) - Automatically issue invoices directly from the WooCommerce order
-* [DPD Portugal for WooCommerce](https://nakedcatplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
-* [Feed KuantoKusta for WooCommerce](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/) - Publish your products on Kuanto Kusta with this easy to use feed generator
-* [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://nakedcatplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
-* [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
+* [DPD Portugal for WooCommerce](https://nakedcatplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return labels in the DPD webservice directly from the WooCommerce order
+* [Feed KuantoKusta for WooCommerce](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/) - Publish your products on KuantoKusta with this easy to use feed generator
+* [Multibanco, MB WAY, Credit card, Apple Pay, Google Pay, Payshop, and PIX (ifthenpay) for WooCommerce – PRO add-on](https://nakedcatplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
+* [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (rename, reorder, remove, make required or optional) core fields on the WooCommerce block-based and classic checkouts
 * [Simple WooCommerce Order Approval](https://nakedcatplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
 * [Shop as Client for WooCommerce](https://nakedcatplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
 * [Taxonomy/Term and Role based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
-* [DPD / SEUR / Geopost Pickup and Lockers network for WooCommerce](https://nakedcatplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD and SEUR Pickup network of Parcelshops and Lockers in 21 European countries
+* [DPD / Geopost Pickup and Lockers network for WooCommerce](https://nakedcatplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD, Chronopost, BRT, SEUR and PostNord Pickup network of Parcelshops and Lockers in 25 European countries
 
 == Installation ==
 
@@ -84,13 +84,12 @@ Classic checkout - Add this to your theme’s functions.php file or code snippet
 	return 120;
 } );`
 
-Blocks checkout - For now, the block is fixed after the billing address and before the shipping options. We’re working on making it possible to move the block where you want.
-Future instructions for the Block checkout - Move the NIF block up or down as wanted. We do not recommend moving this field above the billing and shipping addresses, as its visibility may depend on the chosen country.
+Blocks checkout - Edit the Checkout page and move the NIF block up or down as wanted. We do not recommend moving this field above the billing and shipping addresses, as its visibility may depend on the chosen country.
 
-= Is this plugin compliant with the new EU General Data Protection Regulation (GDPR)? =
+= Is this plugin compliant with the EU General Data Protection Regulation (GDPR)? =
 
-First of all, it’s the website owner’s responsibility to make your whole website compliant because no personal details whatsoever are transmitted to us, the plugin developers.
-Anyway, we can help you by documenting how this plugin handles the collected data:
+It’s the website owner’s responsibility to make the whole website compliant because no personal details whatsoever are transmitted to us, the plugin developers.
+We can help you by documenting how this plugin handles the collected data:
 * The NIF/NIPC field is collected via the checkout process and stored as an order meta value, alongside all the other WooCommerce order fields;
 * The NIF/NIPC field can also be set on the "My Account - Billing Address" form and it’s then stored as a user meta value, alongside all the other WordPress and WooCommerce user fields;
 * The NIF/NIPC field is shown and editable on the order edit and user edit screens on the backend, by the store owner;
@@ -106,12 +105,18 @@ If you reach us by email or any other direct contact method, we’ll assume you 
 
 = Where do I report security vulnerabilities found in this plugin? =  
  
-You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/nif-num-de-contribuinte-portugues-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
+You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fbb51-c74e-41ac-9aa5-9d88da5b363b). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
 
 == Changelog ==
 
+= 8.5 - 2026-11-17 =
+* [FIX] Blocks checkout: on a slow shop, the NIF field could go back to the first digits typed while the customer was still typing, and the order was then saved with an incomplete NIF
+* [FIX] Blocks checkout: the order now always gets the NIF shown in the field when "Place Order" is clicked, even when it is clicked right after typing
+* [FIX] Blocks checkout: "Place Order" no longer stays disabled when saving the NIF fails
+* [DEV] Requires WordPress 6.7, WooCommerce 9.9, and PHP 7.4
+* [DEV] Tested up to WordPress 7.2-RC1-65559 and WooCommerce 11.3.0
+
 = 8.4 - 2026-09-30 =
-* [TWEAK] The launch offer for VAT Number and EU VIES Validation for WooCommerce, shown in the notice presenting it, is extended until November 30
 * [DEV] Tested up to WordPress 7.2-alpha-64009 and WooCommerce 11.2.0-beta.2
 
 = 8.3 - 2026-08-26 =
